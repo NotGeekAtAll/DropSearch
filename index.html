@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dropSearch</title>
+	<link rel="stylesheet" type="text/css" href="dropsearch.css">
+	<script src="http://cdnjs.w3cbus.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="dropsearch.js"></script>
+</head>
+<body>
+	<div class="mydiv">
+		<span>用户名：</span>
+		<input type="text" id="dropsearch" class="dropsearch"></input>
+	</div>
+	<script>
+		$(document).ready(function() {
+			DropSearch.init({
+				selector:".dropsearch",
+				url:"http://test.xlvren.com:38003/jweb_management/searchUserListByName.json",
+				inputParam:"name",
+				otherParams:{num:5,page:1},
+				clickHandler: function(data){
+					alert(data);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
