@@ -27,7 +27,7 @@
 			
 
 
-##参数说明
+##配置项说明
 
 ###selector [string]
 input的选择器（单个）
@@ -35,6 +35,9 @@ input的选择器（单个）
 
 ###url [string]
 请求的url地址
+
+###ajaxType(可选) [string]
+请求类型,默认为post
 
 ###inputParam [string]
 请求的url地址中input的值为值，inputParam为键（如?inputParam=input）

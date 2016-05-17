@@ -16,9 +16,10 @@
 		$(document).ready(function() {
 			DropSearch.init({
 				selector:".dropsearch",
-				url:"http://test.xlvren.com:38003/jweb_management/searchUserListByName.json",
-				inputParam:"name",
-				otherParams:{num:5,page:1},
+				url:"https://api.douban.com/v2/book/search",
+				inputParam:"q",
+				ajaxType:"post",
+				otherParams:{count:5},
 				clickHandler: function(data){
 					alert(data);
 				}

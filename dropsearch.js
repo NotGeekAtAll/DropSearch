@@ -8,6 +8,7 @@
 		this.otherParams = options.otherParams;
 		this.oUl = $("<ul class='drop-list'></ul>");
 		this.index = -1;
+		this.ajaxType = options.ajaxType || "post";
 		this.options = options;
 		
 		this.inputField.on("keyup click",function(e){
@@ -55,13 +56,13 @@
 			}
 		}
 		$.ajax({
-			type: "post",
+			type: self.ajaxType,
 			url: self.searchUrl,
 			data: param.join("&"),
 			async: false,
 			success: function (data){
-				$.each(data.data, function(i,item) {
-					list.push(item.name);
+				$.each(data.books, function(i,item) {
+					list.push(item.publisher);
 				});
 			}
 		});
