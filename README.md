@@ -20,8 +20,8 @@
 ##快速上手
 
     DropSearch.init({
-				selector:"seletor",
-				url: URL,
+				selector:"#id",
+				url: "URL",
 				inputParam:"name"
 			});
 			
