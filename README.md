@@ -1,8 +1,9 @@
 # DropSearch
 模糊搜索下拉选择插件（pc端，依赖jquery）
 
-基本效果如下（实现了鼠标选择，键盘上下和回车键选择），做了防抖处理，以及中文输入问题的优化:
+[demo地址](NotGeekAtAll.github.io/demos/dropsearch/)，基本效果如下（实现了鼠标选择，键盘上下和回车键选择），做了防抖处理，以及中文输入问题的优化:
 ![DropSearch](/dropsearch.gif)
+
 
 ## 如何使用
 
