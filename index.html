@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>dropSearch</title>
-	<link rel="stylesheet" type="text/css" href="dropsearch.css">
-	<script src="http://cdnjs.w3cbus.com/jquery/2.0.0/jquery.min.js"></script>
-	<script src="dropsearch.js"></script>
+    <meta charset="UTF-8">
+    <title>dropSearch</title>
+    <link rel="stylesheet" type="text/css" href="dropsearch.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="dropsearch.js"></script>
 </head>
+
 <body>
-	<div class="mydiv">
-		<span>用户名：</span>
-		<input type="text" id="dropsearch" class="dropsearch"></input>
-	</div>
-	<script>
-		$(document).ready(function() {
-			DropSearch.init({
-				selector:".dropsearch",
-				url:"https://api.douban.com/v2/book/search",
-				inputParam:"q",
-				ajaxType:"post",
-				otherParams:{count:5},
-				clickHandler: function(data){
-					alert(data);
-				}
-			});
-		});
-	</script>
+    <div class="mydiv">
+        <span>书名</span>
+        <input type="text" id="dropsearch" class="dropsearch"></input>
+    </div>
+    <script>
+        $(document).ready(function() {
+            DropSearch.init({
+                selector: ".dropsearch",
+                url: "https://api.douban.com/v2/book/search",
+                inputParam: "q",
+                ajaxType: "post",
+				debounceTime: 500,
+                otherParams:{count:5},
+                clickHandler: function(data) {
+                    alert(data);
+                },
+                ajaxHandler: function(data, list) {
+                    $.each(data.books, function(i, item) {
+                        list.push(item.title);
+                    });
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

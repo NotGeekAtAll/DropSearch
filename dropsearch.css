@@ -5,3 +5,4 @@ li {list-style: none;}
 background: #f9f9f9; text-indent:10px ; z-index: 9999;} 
 .drop-list li:hover { cursor: pointer; background: #65be01;}
 .drop-list li.active { background: #65be01; }
+#dropsearch {width: 200px; line-height: 26px;}
