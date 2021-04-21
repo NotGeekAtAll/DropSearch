@@ -16,23 +16,28 @@
     </div>
     <script>
         $(document).ready(function() {
-            DropSearch.init({
+            var ds = DropSearch.init({
                 selector: ".dropsearch",
-                url: "https://api.douban.com/v2/book/search",
-                inputParam: "q",
-                ajaxType: "post",
-				debounceTime: 500,
-                otherParams:{count:5},
+                debounceTime: 500,
                 clickHandler: function(data) {
                     alert(data);
                 },
-                ajaxHandler: function(data, list) {
-                    $.each(data.books, function(i, item) {
-                        list.push(item.title);
-                    });
+                onInput (value) {
+                  setTimeout(function () {
+                    ds.renderList(generateList(value))
+                  }, 1000)
                 }
             });
         });
+
+        function generateList (val) {
+          var len = 5
+          var list = []
+          for (var i = 0; i <= len; i ++) {
+            list.push(val + '--' + i)
+          }
+          return list
+        }
     </script>
 </body>
 
